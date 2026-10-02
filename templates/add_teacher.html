@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Teacher</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Add Teacher</h2>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Teacher Username"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Teacher Password"
+                required
+            >
+
+            <select name="subject" required>
+                <option value="">Select Subject</option>
+                <option value="COA">COA</option>
+                <option value="DS">Data Structures</option>
+                <option value="DSTL">Discrete Mathematics</option>
+                <option value="Digital Electronics">Digital Electronics</option>
+                <option value="Technical Communication">Technical Communication</option>
+                <option value="Python Programming">Python Programming</option>
+            </select>
+
+            <button type="submit">
+                Add Teacher
+            </button>
+
+        </form>
+
+        <a href="/admin_dashboard" class="back">
+            ← Back to Admin Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

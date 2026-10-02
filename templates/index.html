@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 80px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        .login-box {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 180px;
+            padding: 25px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Attendance Management System</h1>
+
+        <p class="subtitle">
+            Select your login type
+        </p>
+
+        <div class="login-box">
+
+            <div class="card">
+                <h2>Admin</h2>
+                <a href="/admin_login" class="btn">
+                    Admin Login
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Teacher</h2>
+                <a href="/teacher_login" class="btn">
+                    Teacher Login
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Student</h2>
+                <a href="/student_login" class="btn">
+                    Student Login
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

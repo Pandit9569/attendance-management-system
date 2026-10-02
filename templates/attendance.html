@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .navbar {
+            background: #2563eb;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .present {
+            background: #22c55e;
+            color: white;
+        }
+
+        .absent {
+            background: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>Attendance Management System</h2>
+        <span>Attendance</span>
+    </div>
+
+    <div class="container">
+
+        <h2>Mark Attendance</h2>
+
+        <table>
+            <tr>
+                <th>Roll No.</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Attendance</th>
+            </tr>
+
+            {% for student in students %}
+            <tr>
+                <td>{{ student.roll_no }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.course }}</td>
+
+                <td>
+                 <form action="/mark_attendance" method="POST" style="display:inline;">
+    <input type="hidden" name="student_id" value="{{ student.id }}">
+    <input type="hidden" name="status" value="Present">
+    <button type="submit" class="present">Present</button>
+    <select name="subject" required>
+    <option value="">Select Subject</option>
+    <option value="Data Structures">Data Structures</option>
+    <option value="COA">COA</option>
+    <option value="Digital Electronics">Digital Electronics</option>
+    <option value="Technical Communication">Technical Communication</option>
+    <option value="Mathematics">Mathematics</option>
+</select>
+</form>
+
+<form action="/mark_attendance" method="POST" style="display:inline;">
+    <input type="hidden" name="student_id" value="{{ student.id }}">
+    <input type="hidden" name="status" value="Absent">
+    <button type="submit" class="absent">Absent</button>
+    <select name="subject" required>
+    <option value="">Select Subject</option>
+    <option value="Data Structures">Data Structures</option>
+    <option value="COA">COA</option>
+    <option value="Digital Electronics">Digital Electronics</option>
+    <option value="Technical Communication">Technical Communication</option>
+    <option value="Mathematics">Mathematics</option>
+</select>
+</form>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</body>
+</html>
